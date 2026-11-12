@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>MEDRAPPIX – Medical Software | Medizinische Softwareentwicklung</title>
   <meta name="description" content="MEDRAPPIX entwickelt individuelle Software, medizinische Apps und Webanwendungen für das Gesundheitswesen – mit ärztlicher Erfahrung und eigener Softwareentwicklung, von der Idee bis zur Übergabe.">
-  <meta name="theme-color" content="#edf1f5">
+  <meta name="theme-color" content="#e9f2fd">
   <link rel="canonical" href="https://medrappix.de/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
@@ -67,9 +67,9 @@
       </a>
       <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="#start" data-nav="start" aria-current="page">Start</a></li>
-          <li><a href="#warum" data-nav="warum">Warum MEDRAPPIX?</a></li>
-          <li><a href="#leistungen" data-nav="leistungen">Leistungen</a></li>
+          <li><a href="vorgehen/" data-dir="fade">Vorgehen</a></li>
+          <li><a href="ueber-uns/" data-dir="fade">Über uns</a></li>
+          <li><a href="anwendungsfelder/" data-dir="fade">Anwendungsfelder</a></li>
           <li><a href="#kontakt" data-nav="kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -94,7 +94,7 @@
           </div>
         </div>
 
-        <div class="hero__stage" id="heroStage" role="img" aria-label="Illustration: Aus medizinischen Messwerten und Anforderungen entstehen drei Softwareoberflächen – ein Web-Dashboard, eine Tablet-Anwendung zur Dokumentation und eine Smartphone-App mit Verlaufsgrafik. Fiktive Beispieldaten.">
+        <div class="hero__stage" id="heroStage" role="img" aria-label="Illustration: Aus medizinischen Messwerten und Anforderungen entstehen drei Softwareoberflächen – ein Web-Dashboard, eine Tablet-Anwendung im Querformat zur Dokumentation und eine Smartphone-App mit Verlaufsgrafik. Fiktive Beispieldaten.">
           <div class="stage-clip">
           <div class="stage" id="stage" aria-hidden="true">
 
@@ -222,34 +222,38 @@
             <div class="dev dev--tablet" id="devTablet">
               <div class="dev__shell">
                 <div class="dev__screen ui">
-                  <div class="tb">
+                  <div class="tb tb--land">
                     <div class="os-bar"><span>09:41</span><span>WLAN <i></i></span></div>
                     <div class="tb__head">
-                      <small>Stationäre Aufnahme <span class="ui-chip ui-chip--o">in Bearbeitung</span></small>
-                      <b>Aufnahmedokumentation</b>
+                      <div><small>Stationäre Aufnahme</small><b>Aufnahmedokumentation</b></div>
+                      <span class="ui-chip ui-chip--o">in Bearbeitung</span>
                     </div>
-                    <ol class="steps ui-card" data-slot="tab-steps">
-                      <li class="done"><em>✓</em>Anamnese</li>
-                      <li class="done"><em>✓</em>Vitalwerte</li>
-                      <li class="now"><em>3</em>Medikation</li>
-                      <li><em>4</em>Abschluss</li>
-                    </ol>
-                    <div class="tb__section ui-card" data-slot="tab-meds">
-                      <b>Aktuelle Medikation <span>3 Einträge</span></b>
-                      <ul class="meds">
-                        <li><div><b>Ramipril 5 mg</b></div><span class="dose">1-0-0</span></li>
-                        <li><div><b>Bisoprolol 2,5 mg</b></div><span class="dose">1-0-0</span></li>
-                        <li><div><b>Atorvastatin 20 mg</b></div><span class="dose">0-0-1</span></li>
-                      </ul>
-                      <div class="meds__add">＋ Medikament hinzufügen</div>
-                    </div>
-                    <div class="tb__section ui-card" data-slot="tab-form">
-                      <div class="form-mini">
-                        <label>Allergien<span class="input-mini">Keine bekannt</span></label>
-                        <label>Nikotin<span class="seg"><span class="on">Nein</span><span>Ja</span><span>Ehemals</span></span></label>
+                    <div class="tb__cols">
+                      <div class="tb__section ui-card" data-slot="tab-meds">
+                        <b>Aktuelle Medikation <span>3 Einträge</span></b>
+                        <ul class="meds">
+                          <li><div><b>Ramipril 5 mg</b></div><span class="dose">1-0-0</span></li>
+                          <li><div><b>Bisoprolol 2,5 mg</b></div><span class="dose">1-0-0</span></li>
+                          <li><div><b>Atorvastatin 20 mg</b></div><span class="dose">0-0-1</span></li>
+                        </ul>
+                        <div class="meds__add">＋ Medikament hinzufügen</div>
+                      </div>
+                      <div class="tb__right">
+                        <ol class="steps ui-card" data-slot="tab-steps">
+                          <li class="done"><em>✓</em>Anamnese</li>
+                          <li class="done"><em>✓</em>Vitalwerte</li>
+                          <li class="now"><em>3</em>Medikation</li>
+                          <li><em>4</em>Abschluss</li>
+                        </ol>
+                        <div class="tb__section ui-card" data-slot="tab-form">
+                          <div class="form-mini">
+                            <label>Allergien<span class="input-mini">Keine bekannt</span></label>
+                            <label>Nikotin<span class="seg"><span class="on">Nein</span><span>Ja</span><span>Ehemals</span></span></label>
+                          </div>
+                        </div>
+                        <div class="tb__foot"><span class="btn-mini">Zurück</span><span class="btn-mini btn-mini--p">Weiter</span></div>
                       </div>
                     </div>
-                    <div class="tb__foot"><span class="btn-mini">Zurück</span><span class="btn-mini btn-mini--p">Weiter</span></div>
                   </div>
                 </div>
               </div>
@@ -308,7 +312,7 @@
               <svg viewBox="0 0 960 700">
                 <g fill="none" stroke="#1c2059" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                   <rect class="w-outline" x="90.5" y=".5" width="779" height="507" rx="14"/>
-                  <rect class="w-outline" x=".5" y="266.5" width="269" height="427" rx="26"/>
+                  <rect class="w-outline" x=".5" y="404.5" width="419" height="295" rx="26"/>
                   <rect class="w-outline" x="752.5" y="230.5" width="199" height="411" rx="34"/>
                 </g>
                 <g fill="none" stroke="#5c7693" stroke-width="1.5" stroke-linecap="round">
@@ -414,16 +418,6 @@
          02 · WARUM MEDRAPPIX?
          =================================================== -->
     <section class="panel why" id="warum" data-panel="02" data-title="Warum MEDRAPPIX?" aria-labelledby="why-title">
-      <div class="side-links">
-        <a class="side-link side-link--left" href="anwendungsfelder.html" data-dir="left">
-          <span class="side-link__arrow" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7.5 2.5L4 6l3.5 3.5"/></svg></span>
-          <span class="side-link__text">Anwendungsfelder</span>
-        </a>
-        <a class="side-link side-link--right" href="vorgehen.html" data-dir="right">
-          <span class="side-link__arrow" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.5 2.5L8 6 4.5 9.5"/></svg></span>
-          <span class="side-link__text">So arbeiten wir</span>
-        </a>
-      </div>
 
       <div class="container">
         <div class="why__head">
@@ -464,9 +458,8 @@
           </li>
         </ul>
 
-        <nav class="side-cards" aria-label="Mehr zu Warum MEDRAPPIX">
-          <a class="side-card side-card--left" href="anwendungsfelder.html" data-dir="left"><span><small>Mehr erfahren</small><strong>Anwendungsfelder</strong></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7.5 2.5L4 6l3.5 3.5"/></svg></a>
-          <a class="side-card" href="vorgehen.html" data-dir="right"><span><small>Mehr erfahren</small><strong>So arbeiten wir</strong></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4.5 2.5L8 6 4.5 9.5"/></svg></a>
+        <nav class="panel-links reveal" aria-label="Mehr zu MEDRAPPIX">
+          <a class="btn btn--light" href="ueber-uns/" data-dir="fade">Über uns <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
         </nav>
       </div>
     </section>
@@ -497,10 +490,10 @@
           </ol>
         </div>
 
-        <div class="services__note reveal">
-          <a class="btn btn--ghost" href="vorgehen.html" data-dir="right">So arbeiten wir</a>
-          <span>Wie ein Projekt bei uns abläuft – in fünf nachvollziehbaren Schritten.</span>
-        </div>
+        <nav class="panel-links reveal" aria-label="Mehr zu den Leistungen">
+          <a class="btn btn--light" href="anwendungsfelder/" data-dir="fade">Anwendungsfelder <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          <a class="btn btn--light" href="vorgehen/" data-dir="fade">So arbeiten wir <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+        </nav>
       </div>
     </section>
 
@@ -508,16 +501,6 @@
          04 · KONTAKT
          =================================================== -->
     <section class="panel contact" id="kontakt" data-panel="04" data-title="Kontakt" aria-labelledby="contact-title">
-      <div class="side-links">
-        <a class="side-link side-link--left" href="ueber-uns.html" data-dir="left">
-          <span class="side-link__arrow" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7.5 2.5L4 6l3.5 3.5"/></svg></span>
-          <span class="side-link__text">Über uns</span>
-        </a>
-        <a class="side-link side-link--right" href="erfahrung.html" data-dir="right">
-          <span class="side-link__arrow" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4.5 2.5L8 6 4.5 9.5"/></svg></span>
-          <span class="side-link__text">Erfahrung &amp; Hintergrund</span>
-        </a>
-      </div>
 
       <div class="container">
         <div class="contact__grid">
@@ -559,7 +542,7 @@
                 <input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off">
               </div>
               <div class="form__foot">
-                <p class="form__legal" id="formLegal">Pflichtfelder sind mit * markiert. Informationen zur Verarbeitung Ihrer Angaben finden Sie in den <a href="datenschutz.html">Datenschutzhinweisen</a>.</p>
+                <p class="form__legal" id="formLegal">Pflichtfelder sind mit * markiert. Informationen zur Verarbeitung Ihrer Angaben finden Sie in den <a href="datenschutz/">Datenschutzhinweisen</a>.</p>
                 <button class="btn btn--primary" type="submit" id="formSubmit">Nachricht senden <span class="btn__dot" aria-hidden="true"></span></button>
               </div>
               <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
@@ -571,14 +554,10 @@
           </div>
         </div>
 
-        <nav class="side-cards" aria-label="Mehr über MEDRAPPIX">
-          <a class="side-card side-card--left" href="ueber-uns.html" data-dir="left"><span><small>Mehr erfahren</small><strong>Über uns</strong></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7.5 2.5L4 6l3.5 3.5"/></svg></a>
-          <a class="side-card" href="erfahrung.html" data-dir="right"><span><small>Mehr erfahren</small><strong>Erfahrung &amp; Hintergrund</strong></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4.5 2.5L8 6 4.5 9.5"/></svg></a>
-        </nav>
 
         <footer class="site-footer">
           <span>© <span class="js-year">2026</span> MEDRAPPIX · Medical Software</span>
-          <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+          <nav aria-label="Rechtliches"><a href="impressum/">Impressum</a><a href="datenschutz/">Datenschutz</a></nav>
         </footer>
       </div>
     </section>

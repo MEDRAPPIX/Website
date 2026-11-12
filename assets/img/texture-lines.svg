@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none">
+  <!-- Hintergrundtextur im Stil der Leiterbahnen aus dem MEDRAPPIX-Logo (kachelbar, 600 × 600) -->
+  <g stroke="#8fb5e6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 140H168Q190 140 190 118V54"/>
+    <path d="M300 72H438Q460 72 460 94V206H566"/>
+    <path d="M90 316V408Q90 430 112 430H278"/>
+    <path d="M362 330H408Q430 330 430 352V488Q430 510 452 510H566"/>
+    <path d="M190 566V522Q190 500 212 500H300"/>
+    <path d="M548 300V252Q548 230 526 230H504"/>
+    <path d="M250 230H300Q322 230 322 252V280"/>
+  </g>
+  <g fill="#8fb5e6">
+    <circle cx="34" cy="140" r="3.4"/>
+    <circle cx="566" cy="206" r="3.4"/>
+    <circle cx="278" cy="430" r="3.4"/>
+    <circle cx="300" cy="500" r="3.4"/>
+    <circle cx="504" cy="230" r="3.4"/>
+    <circle cx="566" cy="510" r="3.4"/>
+  </g>
+  <g fill="#ffffff" stroke="#8fb5e6" stroke-width="1.2">
+    <rect x="185.5" y="45.5" width="9" height="9" rx="2"/>
+    <rect x="295.5" y="67.5" width="9" height="9" rx="2"/>
+    <rect x="85.5" y="307.5" width="9" height="9" rx="2"/>
+    <rect x="357.5" y="325.5" width="9" height="9" rx="2"/>
+    <rect x="245.5" y="225.5" width="9" height="9" rx="2"/>
+    <rect x="317.5" y="279.5" width="9" height="9" rx="2"/>
+  </g>
+</svg>

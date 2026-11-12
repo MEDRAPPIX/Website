@@ -71,9 +71,10 @@
     panels.forEach(function (p) { io.observe(p); });
   }
 
-  /* ---------- Horizontale Übergänge ----------
+  /* ---------- Seitenübergänge ----------
      data-dir="left"  → Ziel liegt links: aktuelle Seite gleitet nach rechts
-     data-dir="right" → Ziel liegt rechts: aktuelle Seite gleitet nach links */
+     data-dir="right" → Ziel liegt rechts: aktuelle Seite gleitet nach links
+     data-dir="fade"  → neutrale Überblendung (mittige Buttons, Zurück-Links) */
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[data-dir]');
     if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === '_blank') return;
@@ -82,13 +83,13 @@
     if (reduced) return; // normale Navigation, ohne Bewegung
     e.preventDefault();
     setMenu(false);
-    d.classList.remove('enter-from-left', 'enter-from-right');
-    d.classList.add(dir === 'left' ? 'leave-right' : 'leave-left');
+    d.classList.remove('enter-from-left', 'enter-from-right', 'enter-from-fade');
+    d.classList.add(dir === 'left' ? 'leave-right' : dir === 'right' ? 'leave-left' : 'leave-fade');
     setTimeout(function () { window.location.href = a.href; }, 380);
   });
   // Zurück/Vorwärts aus dem Browser-Cache: Ausgangszustand wiederherstellen
   window.addEventListener('pageshow', function (e) {
-    if (e.persisted) d.classList.remove('leave-left', 'leave-right', 'enter-from-left', 'enter-from-right');
+    if (e.persisted) d.classList.remove('leave-left', 'leave-right', 'leave-fade', 'enter-from-left', 'enter-from-right', 'enter-from-fade');
   });
 
   /* ---------- Dezente Einblendungen ---------- */

@@ -22,20 +22,24 @@ Hinweise:
 | Datei | Inhalt |
 | --- | --- |
 | `index.html` | Vier Hauptseiten: `#start` (Hero), `#warum`, `#leistungen`, `#kontakt` |
-| `anwendungsfelder.html` | Nebenseite links von „Warum MEDRAPPIX?“ |
-| `vorgehen.html` | Nebenseite rechts von „Warum MEDRAPPIX?“ (So arbeiten wir) |
-| `ueber-uns.html` | Nebenseite links von „Kontakt“ |
-| `erfahrung.html` | Nebenseite rechts von „Kontakt“ (Erfahrung & Hintergrund) |
-| `impressum.html`, `datenschutz.html` | Rechtliches – Inhalt unverändert aus der bisherigen Website |
-| `leistungen.html`, `kontakt.html` | Weiterleitungen alter URLs auf `index.html#…` |
+| `anwendungsfelder/index.html` → `/anwendungsfelder/` | Unterseite von „Leistungen“ (Button mittig im Bereich) |
+| `vorgehen/index.html` → `/vorgehen/` | Unterseite von „Leistungen“ (So arbeiten wir, mit Illustrationen je Schritt) |
+| `ueber-uns/index.html` → `/ueber-uns/` | Unterseite von „Warum MEDRAPPIX?“ (Button mittig im Bereich) |
+| `impressum/`, `datenschutz/` (je `index.html`) | Rechtliches – Inhalt unverändert aus der bisherigen Website |
+| `*.html` im Hauptordner | Weiterleitungen alter Adressen (z. B. `vorgehen.html` → `vorgehen/`, `kontakt.html` → `/#kontakt`) |
 | `404.html` | Fehlerseite (absolute Pfade, für GitHub Pages) |
 
 Header und Fußzeile stehen in jeder Datei – Änderungen an der Navigation bitte in allen Seiten vornehmen.
 
+## Saubere Adressen
+
+Jede Unterseite liegt in einem eigenen Ordner als `index.html` (z. B. `vorgehen/index.html`). GitHub Pages liefert sie unter `medrappix.de/vorgehen/` aus. Alle Links sind relativ (`../assets/…`, `../#kontakt`), funktionieren also lokal, unter der eigenen Domain und in einem GitHub-Unterpfad. Neue Unterseiten bitte genauso anlegen.
+
 ## Technik
 
 ```
-assets/css/style.css     Gesamtdesign; Farben als Variablen oben in :root
+assets/css/style.css     Gesamtdesign; Farben als Variablen oben in :root; Textur & Diagonalen je Bereich
+assets/img/texture-lines.svg  Hintergrundtextur im Stil der Logo-Leiterbahnen
 assets/css/hero.css      Hero und die drei Mockups (Designraster 960 × 700, wird skaliert)
 assets/js/logo.js        Logo als SVG aus vier Masken-Ebenen des Originallogos + Aufbau-Animation
 assets/js/hero.js        Logo-Intro und Hero-Animation (GSAP)
