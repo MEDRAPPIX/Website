@@ -65,7 +65,7 @@ html:not(.js) .hero__replay { display: none; }
 .dev--browser .dev__shell {
   border-radius: 14px; background: #fff; overflow: hidden;
   border: 1px solid #cfd8e2;
-  box-shadow: 0 1px 1px rgba(24, 34, 45, .04), 0 30px 60px -28px rgba(28, 32, 89, .32), 0 12px 24px -16px rgba(24, 34, 45, .16);
+  box-shadow: 0 1px 1px rgba(24, 34, 45, .04), 0 30px 60px -28px rgba(15, 44, 92, .32), 0 12px 24px -16px rgba(24, 34, 45, .16);
 }
 .dev--tablet .dev__shell, .dev--phone .dev__shell {
   padding: 9px; border-radius: 26px; background: linear-gradient(160deg, #2a3446, #161d28);
@@ -218,7 +218,7 @@ html:not(.js) .hero__replay { display: none; }
 .ph__head b { display: block; font: 600 15px/1.2 var(--font-display); letter-spacing: -.015em; }
 .ph__avatar { width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, #e7edf4, #d4dde8); display: grid; place-items: center; }
 .ph__avatar svg { width: 12px; height: 12px; color: var(--slate); }
-.ph__hero { padding: 11px 12px 10px; border-radius: 14px; background: linear-gradient(150deg, #20265f, #2d3a75); color: #fff; position: relative; overflow: hidden; }
+.ph__hero { padding: 11px 12px 10px; border-radius: 14px; background: linear-gradient(150deg, #0f2c5c, #1b4682); color: #fff; position: relative; overflow: hidden; }
 .ph__hero::after { content: ""; position: absolute; right: -24px; top: -24px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .12); box-shadow: 0 0 0 12px rgba(255, 255, 255, .04); }
 .ph__hero small { font-size: 9px; text-transform: uppercase; letter-spacing: .08em; color: rgba(255, 255, 255, .7); font-weight: 600; display: flex; align-items: center; gap: 5px; }
 .ph__hero .big { margin-top: 4px; font: 600 27px/1 var(--font-display); letter-spacing: -.03em; }
@@ -253,7 +253,7 @@ html:not(.js) .hero__replay { display: none; }
 .frag__med, .frag__wire { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; }
 .frag__med {
   background: rgba(255, 255, 255, .9); border: 1px solid #dbe2ea;
-  box-shadow: 0 14px 30px -18px rgba(28, 32, 89, .35);
+  box-shadow: 0 14px 30px -18px rgba(15, 44, 92, .35);
   padding: 10px 12px; font: 500 11px/1.35 var(--font-body); color: #1b2533;
 }
 .frag__med small { display: block; font: 500 9px/1.2 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: #6a7789; }

@@ -2,7 +2,7 @@
    MEDRAPPIX – Website V4
    Gesamtdesign: helles Blau und Weiß mit Orange-Akzenten.
    Farbwerte abgeleitet aus „Medrappix Logo.png“:
-     Schrift  #162026   Leiterbahnen  #1C2059
+     Schrift  #162026   Leiterbahnen  #0F2C5C
      Orange   #FF7F27   Unterzeile    #C3C3C3
    ========================================================= */
 
@@ -32,7 +32,7 @@
   --steel: #4874a8;
   --steel-soft: #c3d7ee;
   --slate: #1f4580;
-  --navy: #1c2059;          /* Leiterbahnen im Logo */
+  --navy: #0f2c5c;          /* Leiterbahnen im Logo */
   --sky: #2f7de1;           /* frisches Akzentblau */
   --sky-soft: #d9e9fd;
   --teal: #3b8a96;
@@ -44,7 +44,7 @@
 
   /* Logo-Ebenen (siehe logo.js) */
   --logo-ink: #162026;
-  --logo-blue: #1c2059;
+  --logo-blue: #0f2c5c;
   --logo-orange: #ff7f27;
   --logo-grey: #a9b0b8;     /* Original #C3C3C3 – auf hellem Grund leicht abgedunkelt */
 
@@ -214,8 +214,8 @@ body::before {
   font: 600 16px/1 var(--font-body); text-decoration: none; cursor: pointer;
   transition: background-color .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease);
 }
-.btn--primary { background: linear-gradient(135deg, var(--navy), #2a4a9e); color: #fff; box-shadow: 0 10px 24px -12px rgba(28, 50, 140, .6); }
-.btn--primary:hover { background: linear-gradient(135deg, #22286b, #3158b3); transform: translateY(-1px); }
+.btn--primary { background: linear-gradient(135deg, var(--navy), #1f5aa6); color: #fff; box-shadow: 0 10px 24px -12px rgba(15, 60, 130, .6); }
+.btn--primary:hover { background: linear-gradient(135deg, #14386f, #2a6cc4); transform: translateY(-1px); }
 .btn--primary .btn__dot { width: 7px; height: 7px; border-radius: 2px; background: var(--orange); transition: transform .3s var(--ease); }
 .btn--primary:hover .btn__dot { transform: translateX(3px); }
 .btn--ghost { background: rgba(255, 255, 255, .7); border-color: var(--line-strong); color: var(--ink); }
@@ -243,9 +243,10 @@ body::before {
 :root {
   --texture: url("../img/texture-lines.svg");
   --tex-size: 600px;
-  --diag-fill: rgba(47, 125, 225, .075);
-  --diag-edge: rgba(110, 158, 222, .6);
-  --diag-thin: rgba(110, 158, 222, .32);
+  --diag-deep: rgba(24, 88, 182, .26);   /* direkt in der Ecke */
+  --diag-fill: rgba(47, 125, 225, .10);   /* zur Kante hin */
+  --diag-edge: rgba(40, 104, 196, .8);
+  --diag-thin: rgba(60, 120, 205, .42);
 }
 /* Diagonale als Hintergrundebenen: Fläche bis --a, Kante, zweite feine Linie bei --b */
 .panel, body.sub::after {
@@ -254,9 +255,9 @@ body::before {
   --a2: calc(var(--a) * .55);
   --b2: calc(var(--b) * .6);
   --diag:
-    linear-gradient(var(--ang), var(--diag-fill) 0 var(--a), var(--diag-edge) var(--a) calc(var(--a) + 1.5px), transparent calc(var(--a) + 1.5px)),
+    linear-gradient(var(--ang), var(--diag-deep) 0, var(--diag-fill) var(--a), var(--diag-edge) var(--a) calc(var(--a) + 1.5px), transparent calc(var(--a) + 1.5px)),
     linear-gradient(var(--ang), transparent calc(var(--b) - .5px), var(--diag-thin) calc(var(--b) - .5px) calc(var(--b) + .5px), transparent calc(var(--b) + .5px)),
-    linear-gradient(var(--ang2), var(--diag-fill) 0 var(--a2), var(--diag-edge) var(--a2) calc(var(--a2) + 1.5px), transparent calc(var(--a2) + 1.5px)),
+    linear-gradient(var(--ang2), var(--diag-deep) 0, var(--diag-fill) var(--a2), var(--diag-edge) var(--a2) calc(var(--a2) + 1.5px), transparent calc(var(--a2) + 1.5px)),
     linear-gradient(var(--ang2), transparent calc(var(--b2) - .5px), var(--diag-thin) calc(var(--b2) - .5px) calc(var(--b2) + .5px), transparent calc(var(--b2) + .5px));
 }
 .panel::after {
@@ -282,7 +283,8 @@ body::before {
 /* 03 Leistungen: Fläche oben links (auf Hellblau etwas kräftiger) */
 .panel.services {
   --ang: 135deg; --a: 12.5%; --b: 17%;
-  --diag-fill: rgba(47, 125, 225, .09);
+  --diag-fill: rgba(47, 125, 225, .12);
+  --diag-deep: rgba(24, 88, 182, .3);
   --tex-mask: radial-gradient(55% 70% at 0% 0%, #000 15%, transparent 72%), radial-gradient(52% 66% at 100% 100%, #000 12%, transparent 72%);
   background: var(--diag), linear-gradient(180deg, #edf4fe 0%, #e1edfb 100%);
 }
@@ -425,7 +427,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 0; }
 .field textarea { min-height: 150px; resize: vertical; }
 .field input::placeholder, .field textarea::placeholder { color: #7f8c9c; }
 .field input:hover, .field textarea:hover { border-color: var(--steel); }
-.field input:focus, .field textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(28, 32, 89, .12); }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(15, 44, 92, .12); }
 .field.is-invalid input, .field.is-invalid textarea { border-color: #b3261e; box-shadow: 0 0 0 3px rgba(179, 38, 30, .08); }
 .field__error { font-size: 13.5px; line-height: 1.4; color: #a1221b; min-height: 0; }
 .field__error:empty { display: none; }
