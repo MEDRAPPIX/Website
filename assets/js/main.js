@@ -13,6 +13,25 @@
   var reduced = false;
   try { reduced = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
+  /* ---------- Direkt zum Bereich springen, danach weiches Scrollen aktivieren ---------- */
+  function jumpToHash() {
+    var id = location.hash && location.hash.slice(1);
+    var el = id && document.getElementById(id);
+    if (el) window.scrollTo({ top: el.offsetTop, behavior: 'instant' });
+  }
+  jumpToHash();
+  window.addEventListener('load', function () {
+    jumpToHash(); // nach Schriften/Bildern erneut, falls sich Höhen verschoben haben
+    // erst wenn die Position steht, weiches Scrollen für Klicks innerhalb der Seite aktivieren
+    setTimeout(function () {
+      jumpToHash();
+      if (document.body.classList.contains('home')) d.classList.add('snap'); // Einrasten der Hauptbereiche
+      d.classList.add('smooth');
+    }, 350);
+  });
+  // Zurück aus dem Browser-Cache: Position bleibt erhalten, weiches Scrollen bleibt aktiv
+  window.addEventListener('pageshow', function (e) { if (e.persisted) d.classList.add('smooth'); });
+
   /* ---------- Jahr ---------- */
   document.querySelectorAll('.js-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 

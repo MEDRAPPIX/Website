@@ -321,7 +321,10 @@ body.sub .page-main::before {
   html.snap { scroll-snap-type: y mandatory; }
   html.snap .panel { scroll-snap-align: start; scroll-snap-stop: always; }
 }
-html { scroll-behavior: smooth; scroll-padding-top: 0; }
+html { scroll-padding-top: 0; }
+/* Weiches Scrollen erst nach dem Laden (main.js setzt .smooth) – sonst animiert der Browser
+   beim Öffnen von index.html#leistungen den Weg von oben bis zum Bereich. */
+html.smooth { scroll-behavior: smooth; }
 
 /* ---------- Mittige Zugänge zu den Unterseiten ---------- */
 .panel-links {
@@ -699,3 +702,96 @@ html.js .reveal.is-in { opacity: 1; transform: none; }
 @media (max-width: 999px), (max-height: 819px) {
   .frame__label { display: none; }
 }
+
+/* =========================================================
+   Kosten & Projektplanung, FAQ
+   ========================================================= */
+.sub-section { margin-top: clamp(56px, 9vh, 96px); }
+.sub-section__title { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; max-width: 30ch; text-wrap: balance; }
+.sub-section .fields { margin-top: clamp(24px, 4vh, 40px); }
+.fields--six .field-card, .fields--six .field-card:nth-child(4), .fields--six .field-card:nth-child(5) { grid-column: span 2; }
+.field-card h3 { font-size: 20px; line-height: 1.3; margin-bottom: 10px; }
+.process--compact { margin-top: clamp(24px, 4vh, 40px); }
+.process--compact .step h3 { font-size: 21px; line-height: 1.3; }
+.process--compact .step__body > p { grid-column: 2 / -1; max-width: 72ch; }
+
+/* Beispiel-Szenario */
+.example {
+  display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: clamp(20px, 4vw, 64px);
+  padding: clamp(28px, 4vw, 48px); border-radius: 18px; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--navy) 0%, #164a8c 100%); color: #e6eefb;
+  box-shadow: var(--shadow-md);
+}
+.example::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
+  background: var(--texture) 0 0 / 520px 520px repeat;
+  -webkit-mask-image: radial-gradient(70% 90% at 100% 100%, #000 10%, transparent 70%); mask-image: radial-gradient(70% 90% at 100% 100%, #000 10%, transparent 70%);
+}
+.example > * { position: relative; z-index: 1; }
+.example .eyebrow { color: #9fc4f2; }
+.example h2 { color: #fff; margin-top: 16px; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; }
+.example__body { display: grid; gap: 14px; }
+.example__body p { color: #cfdcf0; }
+.example__case { font: 600 19px/1.45 var(--font-display) !important; color: #fff !important; letter-spacing: -.01em; }
+.example__key { padding-left: 14px; border-left: 3px solid var(--orange); color: #fff !important; font-weight: 600; }
+.example__note { font: 500 11.5px/1.4 var(--font-mono) !important; letter-spacing: .06em; text-transform: uppercase; color: #9fb7d9 !important; }
+
+/* Abschluss mit Kontakt-Button */
+.cta-box {
+  margin-top: clamp(40px, 7vh, 72px); padding: clamp(24px, 3.5vw, 40px); border-radius: 18px;
+  display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--orange);
+}
+.cta-box > div { max-width: 62ch; display: grid; gap: 8px; }
+.cta-box h2 { font-size: clamp(22px, 2.2vw, 28px); }
+.cta-box p { color: var(--ink-2); }
+.closing > div p { color: var(--ink-2); }
+
+/* FAQ-Akkordeon */
+.faq { margin-top: clamp(40px, 7vh, 72px); display: grid; gap: 12px; max-width: 980px; }
+.faq__item {
+  border-radius: 14px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.faq__item:hover { border-color: var(--line-strong); }
+.faq__item[open] { border-color: var(--line-strong); box-shadow: var(--shadow-md); }
+.faq__item summary {
+  list-style: none; cursor: pointer; display: grid; grid-template-columns: 34px minmax(0, 1fr) 28px; align-items: center; gap: 14px;
+  padding: 20px 22px; border-radius: 14px;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary h2 { font-size: clamp(17px, 1.4vw, 19px); line-height: 1.35; font-weight: 600; }
+.faq__icon { position: relative; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line-strong); background: #fff; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .35s var(--ease); }
+.faq__icon::before, .faq__icon::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1.6px; margin: -.8px 0 0 -5.5px; background: var(--navy); border-radius: 2px; transition: transform .35s var(--ease); }
+.faq__icon::after { transform: rotate(90deg); }
+.faq__item[open] .faq__icon { background: var(--navy); border-color: var(--navy); transform: rotate(180deg); }
+.faq__item[open] .faq__icon::before, .faq__item[open] .faq__icon::after { background: #fff; }
+.faq__item[open] .faq__icon::after { transform: rotate(0deg); }
+.faq__answer { padding: 0 22px 22px calc(22px + 34px + 14px); }
+.faq__answer p { color: var(--ink-2); max-width: 72ch; }
+
+@media (max-width: 999px) {
+  .example { grid-template-columns: 1fr; }
+  .fields--six { grid-template-columns: 1fr 1fr; }
+  .fields--six .field-card, .fields--six .field-card:nth-child(4), .fields--six .field-card:nth-child(5) { grid-column: span 1; }
+  .process--compact .step__body > p { grid-column: auto; }
+}
+@media (max-width: 640px) {
+  .fields--six { grid-template-columns: 1fr; }
+  .faq__item summary { grid-template-columns: minmax(0, 1fr) 28px; padding: 18px; }
+  .faq__item summary .num { display: none; }
+  .faq__answer { padding: 0 18px 18px; }
+}
+/* Kontakt + FAQ-Button auf niedrigen Laptop-Bildschirmen in einem Bildschirm */
+@media (min-width: 1000px) and (max-height: 820px) {
+  .panel.contact { padding-bottom: 24px; }
+  .panel-links--contact { margin-top: 18px; }
+  .panel.contact .site-footer { margin-top: 18px; padding-top: 14px; }
+  .panel.contact .field textarea { min-height: 96px; height: 96px; }
+  .panel.contact .form { gap: 14px; }
+}
+
+/* Zurück-Button am Seitenende der Unterseiten */
+.sub-back { margin-top: clamp(32px, 5vh, 56px); display: flex; }
+.sub-back + .site-footer { margin-top: 24px; }

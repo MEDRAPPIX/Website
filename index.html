@@ -28,7 +28,7 @@
     /* Läuft vor dem ersten Rendern: legt fest, ob Intro und Hero-Animation abgespielt werden. */
     (function () {
       var d = document.documentElement, rm = false, seen = false, dir = null;
-      d.classList.add('js', 'snap');
+      d.classList.add('js'); /* 'snap' setzt main.js erst nach dem Laden */
       try { rm = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
       try { seen = sessionStorage.getItem('mx-intro') === '1'; dir = sessionStorage.getItem('mx-dir'); sessionStorage.removeItem('mx-dir'); } catch (e) {}
       var atTop = !location.hash || location.hash === '#start';
@@ -70,6 +70,8 @@
           <li><a href="vorgehen/" data-dir="fade">Vorgehen</a></li>
           <li><a href="ueber-uns/" data-dir="fade">Über uns</a></li>
           <li><a href="anwendungsfelder/" data-dir="fade">Anwendungsfelder</a></li>
+          <li><a href="kosten/" data-dir="fade">Kosten</a></li>
+          <li><a href="faq/" data-dir="fade">FAQ</a></li>
           <li><a href="#kontakt" data-nav="kontakt">Kontakt</a></li>
         </ul>
       </nav>
@@ -489,6 +491,7 @@
         <nav class="panel-links reveal" aria-label="Mehr zu den Leistungen">
           <a class="btn btn--light" href="anwendungsfelder/" data-dir="fade">Anwendungsfelder <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
           <a class="btn btn--light" href="vorgehen/" data-dir="fade">So arbeiten wir <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          <a class="btn btn--light" href="kosten/" data-dir="fade">Kosten &amp; Projektplanung <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
         </nav>
       </div>
     </section>
@@ -549,6 +552,10 @@
             </div>
           </div>
         </div>
+
+        <nav class="panel-links panel-links--contact reveal" aria-label="Weitere Informationen">
+          <a class="btn btn--light" href="faq/" data-dir="fade">Häufige Fragen (FAQ) <svg class="btn__arrow" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+        </nav>
 
 
         <footer class="site-footer">

@@ -25,6 +25,8 @@ Hinweise:
 | `anwendungsfelder/index.html` → `/anwendungsfelder/` | Unterseite von „Leistungen“ (Button mittig im Bereich) |
 | `vorgehen/index.html` → `/vorgehen/` | Unterseite von „Leistungen“ (So arbeiten wir, mit Illustrationen je Schritt) |
 | `ueber-uns/index.html` → `/ueber-uns/` | Unterseite von „Warum MEDRAPPIX?“ (Button mittig im Bereich) |
+| `kosten/index.html` → `/kosten/` | Kosten & Projektplanung (Button im Bereich „Leistungen“ und im Header) |
+| `faq/index.html` → `/faq/` | Häufige Fragen (Button unter dem Kontaktformular und im Header) |
 | `impressum/`, `datenschutz/` (je `index.html`) | Rechtliches – Inhalt unverändert aus der bisherigen Website |
 | `*.html` im Hauptordner | Weiterleitungen alter Adressen (z. B. `vorgehen.html` → `vorgehen/`, `kontakt.html` → `/#kontakt`) |
 | `404.html` | Fehlerseite (absolute Pfade, für GitHub Pages) |
